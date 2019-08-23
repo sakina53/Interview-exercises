@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bar Graph</title>
+</head>
+<body>
+    <h2>Bar Graph</h2>             
+    <canvas id="myCanvas" width="900" height="400">
+    </canvas>
+        
+    <script>
+        
+        var values =  [49, 8, 23, 57, 94, 78, 94, 54, 75, 63];
+                                 
+        var canvas = document.getElementById('myCanvas');
+        var bar = canvas.getContext('2d');
+                         
+        var width = 50; //bar width
+        var X = 50; // first bar position 
+        var base = 200;
+                                 
+            for (var i =0; i<values.length; i++) {
+                bar.fillStyle = '#032c6e'; 
+                var h = values[i];
+                bar.fillRect(X, canvas.height - h,width,h);
+                                     
+                X +=  width+15;
+                /* text to display Bar number */
+                bar.fillStyle = '#4da6ff';
+                bar.fillText(h,X-50, canvas.height - h -10);
+            }                    
+    </script>
+</body>
+</html>

@@ -10,3 +10,4 @@
 - After you complete the exercise, provide any notes on your code below such as how to run your example
 
 ## Candidate Notes:
+Open the index.html file in any web browser. 
