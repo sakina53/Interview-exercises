@@ -9,19 +9,36 @@
 <p id="demo"></p>
 
 <script>
-var person = { 
-    "name" : { 
-  first:  "FirstName", 
-  middleInitial : "I",
-  lastName : "LastName"
-}
-}
 
-function x () {
-    return person.name.lastName;
-}
 
-document.getElementById("demo").innerHTML = x(); 
+function getDeepProperty(obj, path) {
+
+  if (obj === undefined || obj === null) {
+        return;
+  }
+   var paths = path.split(".");
+
+   for(i=0; i < paths.length; i++){
+      obj= obj[paths[i]];
+
+   }
+   
+  
+   return obj;
+
+}
+const someObj = {
+  person: {
+    name: {
+      first: 'FirstName', 
+      middleInitial: 'I', 
+      lastName: 'LastName'
+      }
+    }
+  };
+
+
+document.getElementById("demo").innerHTML = getDeepProperty(someObj, 'person.name.lastName');; 
 </script>
 
 </body>
